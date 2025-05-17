@@ -19,7 +19,10 @@ const app = express();
 app.use(express.json());
 
 // Enable CORS
-app.use(cors());
+app.use(cors({
+  origin: ['https://berkysan.shop', 'http://localhost:3000'],
+  credentials: true
+}));
 
 // Mount routers
 app.use('/api/auth', authRoutes);
