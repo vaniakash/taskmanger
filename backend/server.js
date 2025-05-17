@@ -20,8 +20,10 @@ app.use(express.json());
 
 // Enable CORS
 app.use(cors({
-  origin: ['https://berkysan.shop', 'http://localhost:3000'],
-  credentials: true
+  origin: ['https://berkysan.shop', 'http://localhost:3000', 'https://tasktreker.vercel.app', '*'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Mount routers
